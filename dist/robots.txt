@@ -1,0 +1,7 @@
+# robots.txt for hadza.dev
+
+User-agent: *
+Allow: /
+
+# Sitemap location (update when sitemap is created)
+# Sitemap: https://hadza.dev/sitemap.xml

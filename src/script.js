@@ -1,9 +1,16 @@
-// Blob following mouse
+// Check for reduced motion preference
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Blob following mouse/touch
 const blob = document.getElementById("blob");
 
 if (blob) {
-  document.body.onpointermove = (event) => {
-    const { pageX, pageY } = event;
+  // Handle both mouse and touch events
+  const handlePointerMove = (event) => {
+    const { pageX, pageY } = event.touches ? event.touches[0] : event;
+
+    // Respect reduced motion preference
+    const duration = prefersReducedMotion ? 0 : 4000;
 
     blob.animate(
       {
@@ -11,11 +18,18 @@ if (blob) {
         top: `${pageY}px`
       },
       {
-        duration: 4000,
+        duration: duration,
         fill: "forwards"
       }
     );
   };
+
+  // Mouse events
+  document.body.onpointermove = handlePointerMove;
+
+  // Touch events for mobile
+  document.body.addEventListener('touchmove', handlePointerMove, { passive: true });
+  document.body.addEventListener('touchstart', handlePointerMove, { passive: true });
 }
 
 // Audio State Management

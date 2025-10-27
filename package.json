@@ -1,0 +1,27 @@
+{
+  "name": "hadza",
+  "version": "1.0.0",
+  "description": "An interactive visual experience with cursor-following effects and ambient design",
+  "type": "module",
+  "scripts": {
+    "dev": "vite src",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "vite src --host"
+  },
+  "keywords": [
+    "interactive",
+    "visual",
+    "cursor-effect",
+    "web-animation",
+    "creative"
+  ],
+  "author": "Isaac Osuna",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "howler": "^2.2.3"
+  }
+}
