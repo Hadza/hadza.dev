@@ -1,17 +1,59 @@
-<!-- Cursor follow blob and background blur -->
-<div id="blob"></div>
-<div id="blur"></div>
-<!-- Home Section -->
-<div id="home" class="relative h-screen relative">
-  <div class="white-block"></div>
-  <div class="black-block"></div>
-  <div class="absolute top-1/2 left-1/2 flex flex-col items-center justify-center">
-    <section class="z-10">
-      <h1 class="text-mono gradient-text antialised translate">hADzA</h1>
-    </section>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hadza - An interactive visual experience with cursor-following effects and ambient design">
+  <meta name="author" content="Isaac Osuna">
+  <meta name="theme-color" content="#000000">
 
-<footer>
-  <h3 id="credits" class="text-mono gradient-text">by: isaac osuna</h3>
-</footer>
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hadza">
+  <meta property="og:description" content="An interactive visual experience with cursor-following effects">
+  <meta property="og:image" content="/og-image.png">
+
+  <title>Hadza</title>
+
+  <!-- Preconnect to Google Fonts for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- Cursor follow blob and background blur -->
+  <div id="blob" aria-hidden="true"></div>
+  <div id="blur" aria-hidden="true"></div>
+
+  <!-- Main Content -->
+  <main id="home" class="home-container">
+    <div class="white-block" aria-hidden="true"></div>
+    <div class="black-block" aria-hidden="true"></div>
+
+    <div class="content-center">
+      <section class="hero-section">
+        <h1 class="text-mono gradient-text" role="banner">hADzA</h1>
+      </section>
+    </div>
+  </main>
+
+  <!-- Audio Control -->
+  <button id="audio-toggle" class="audio-control" aria-label="Toggle audio" title="Toggle audio">
+    <span class="audio-icon">🔇</span>
+  </button>
+
+  <!-- Footer -->
+  <footer>
+    <p id="credits" class="text-mono gradient-text">by: isaac osuna</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
