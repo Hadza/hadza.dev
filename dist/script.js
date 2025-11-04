@@ -55,16 +55,18 @@ if (blob) {
 // ==========================================
 
 let lastScrollY = window.scrollY;
-const parallaxSpeed = 0.3;
+let currentParallaxOffset = 0;
+const parallaxSpeed = 0.05; // Reduced from 0.3 to 0.05 for subtle effect
 
 window.addEventListener('scroll', () => {
   if (prefersReducedMotion || !blob) return;
 
   const scrollY = window.scrollY;
-  const parallaxOffset = scrollY * parallaxSpeed;
+  currentParallaxOffset = scrollY * parallaxSpeed;
 
-  // Apply parallax offset to blob
-  blob.style.transform = `translate(-50%, -50%) translateY(${parallaxOffset}px)`;
+  // Apply subtle parallax offset to blob
+  // Using calc() to keep -50% centering while adding small offset
+  blob.style.transform = `translate(-50%, calc(-50% + ${currentParallaxOffset}px))`;
 
   lastScrollY = scrollY;
 }, { passive: true });
