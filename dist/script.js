@@ -53,23 +53,8 @@ if (blob) {
 // ==========================================
 // PARALLAX BLOB EFFECT ON SCROLL
 // ==========================================
-
-let lastScrollY = window.scrollY;
-let currentParallaxOffset = 0;
-const parallaxSpeed = 0.05; // Reduced from 0.3 to 0.05 for subtle effect
-
-window.addEventListener('scroll', () => {
-  if (prefersReducedMotion || !blob) return;
-
-  const scrollY = window.scrollY;
-  currentParallaxOffset = scrollY * parallaxSpeed;
-
-  // Apply subtle parallax offset to blob
-  // Using calc() to keep -50% centering while adding small offset
-  blob.style.transform = `translate(-50%, calc(-50% + ${currentParallaxOffset}px))`;
-
-  lastScrollY = scrollY;
-}, { passive: true });
+// DISABLED: Parallax was causing cursor tracking offset issues
+// The blob now follows cursor accurately without parallax drift
 
 // ==========================================
 // AUDIO MANAGEMENT

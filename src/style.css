@@ -57,9 +57,9 @@ body {
   border-radius: 50%;
   animation: rotate 25s infinite linear;
   opacity: 1;
-  z-index: 15;
+  z-index: 5;
   pointer-events: none;
-  will-change: transform;
+  will-change: left, top;
   transform: translate(-50%, -50%);
 }
 
@@ -79,7 +79,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 16;
+  z-index: 6;
   backdrop-filter: blur(100px);
   pointer-events: none;
 }
@@ -164,7 +164,7 @@ body {
    ======================================== */
 #scroll-container {
   position: relative;
-  z-index: 12;
+  /* NO z-index - prevents stacking context issues */
 }
 
 .full-section {
@@ -218,7 +218,7 @@ body {
 
 .content-center {
   position: relative;
-  z-index: 20;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -226,7 +226,7 @@ body {
 }
 
 .hero-section {
-  z-index: 20;
+  z-index: 10;
 }
 
 .text-mono {
@@ -236,7 +236,7 @@ body {
   padding: 0rem clamp(1rem, 2vw, 3rem);
   border-radius: clamp(0.4rem, 0.75vw, 1rem);
   margin: 0rem;
-  z-index: 20;
+  z-index: 10;
   color: transparent;
   user-select: none;
 }
@@ -269,7 +269,7 @@ body {
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 20;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -324,7 +324,7 @@ body {
   position: absolute;
   bottom: 15px;
   left: 15px;
-  z-index: 20;
+  z-index: 10;
 }
 
 #credits {
@@ -344,7 +344,7 @@ body {
   max-width: 1200px;
   width: 90%;
   padding: var(--section-padding);
-  z-index: 20;
+  z-index: 10;
   position: relative;
   opacity: 0;
   transform: translateY(30px);
