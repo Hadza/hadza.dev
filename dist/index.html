@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Hadza - An interactive visual experience with cursor-following effects and ambient design">
+  <meta name="description" content="Hadza - Portfolio of Isaac Osuna - An interactive visual experience with cursor-following effects">
   <meta name="author" content="Isaac Osuna">
   <meta name="theme-color" content="#000000">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Hadza">
-  <meta property="og:description" content="An interactive visual experience with cursor-following effects">
+  <meta property="og:title" content="Hadza - Isaac Osuna Portfolio">
+  <meta property="og:description" content="An interactive cinematic portfolio experience">
   <meta property="og:image" content="/og-image.png">
 
-  <title>Hadza</title>
+  <title>Hadza - Isaac Osuna</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -23,37 +23,146 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+  <!-- PERSISTENT ELEMENTS (Fixed position - always visible) -->
+
   <!-- Cursor follow blob and background blur -->
   <div id="blob" aria-hidden="true"></div>
   <div id="blur" aria-hidden="true"></div>
-
-  <!-- Main Content -->
-  <main id="home" class="home-container">
-    <div class="white-block" aria-hidden="true"></div>
-    <div class="black-block" aria-hidden="true"></div>
-
-    <div class="content-center">
-      <section class="hero-section">
-        <h1 class="text-mono gradient-text" role="banner">hADzA</h1>
-      </section>
-    </div>
-  </main>
 
   <!-- Audio Control -->
   <button id="audio-toggle" class="audio-control" aria-label="Toggle audio" title="Toggle audio">
     <span class="audio-icon">🔇</span>
   </button>
 
-  <!-- Footer -->
-  <footer>
-    <p id="credits" class="text-mono gradient-text">by: isaac osuna</p>
-  </footer>
+  <!-- Section Navigation Dots -->
+  <nav id="section-nav" class="section-nav" aria-label="Section navigation">
+    <button class="nav-dot active" data-section="home" aria-label="Go to Home"></button>
+    <button class="nav-dot" data-section="about" aria-label="Go to About"></button>
+    <button class="nav-dot" data-section="projects" aria-label="Go to Projects"></button>
+  </nav>
+
+  <!-- SCROLLABLE CONTENT -->
+  <main id="scroll-container">
+
+    <!-- HOME SECTION -->
+    <section id="home" class="full-section active" data-section="home">
+      <div class="white-block" aria-hidden="true"></div>
+      <div class="black-block" aria-hidden="true"></div>
+
+      <div class="content-center">
+        <div class="hero-section">
+          <h1 id="hadza-title" class="text-mono gradient-text clickable" role="banner" tabindex="0">hADzA</h1>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">
+        <div class="scroll-icon">
+          <span class="scroll-arrow">↓</span>
+        </div>
+        <p class="scroll-text">scroll to explore</p>
+      </div>
+
+      <!-- Credits (only in home section) -->
+      <footer class="home-footer">
+        <p id="credits" class="text-mono gradient-text">by: isaac osuna</p>
+      </footer>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="full-section" data-section="about">
+      <div class="content-wrapper">
+        <h2 class="section-title text-mono gradient-text">About Me</h2>
+
+        <div class="about-content">
+          <div class="about-text">
+            <p class="about-intro">
+              Hello! I'm Isaac Osuna, a creative developer passionate about crafting
+              immersive digital experiences that blur the line between art and technology.
+            </p>
+            <p class="about-description">
+              With a keen eye for design and a love for interactive storytelling,
+              I create web experiences that captivate and engage users through
+              thoughtful animations, smooth transitions, and intuitive interfaces.
+            </p>
+          </div>
+
+          <div class="about-skills">
+            <h3 class="skills-title">Skills & Technologies</h3>
+            <div class="skill-grid">
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">HTML5 & CSS3</span>
+              <span class="skill-tag">Web Animations</span>
+              <span class="skill-tag">UI/UX Design</span>
+              <span class="skill-tag">Interactive Design</span>
+              <span class="skill-tag">Creative Coding</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="full-section" data-section="projects">
+      <div class="content-wrapper">
+        <h2 class="section-title text-mono gradient-text">Projects</h2>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-content">
+              <h3 class="project-title">Interactive Experience</h3>
+              <p class="project-description">
+                A cinematic web experience featuring cursor-following effects
+                and smooth scroll animations.
+              </p>
+              <div class="project-tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">CSS Animations</span>
+                <span class="tag">Web Audio</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-content">
+              <h3 class="project-title">Creative Portfolio</h3>
+              <p class="project-description">
+                A showcase of visual design and interaction design principles
+                with focus on user experience.
+              </p>
+              <div class="project-tags">
+                <span class="tag">UI/UX</span>
+                <span class="tag">Interaction Design</span>
+                <span class="tag">Responsive</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-content">
+              <h3 class="project-title">Motion Graphics</h3>
+              <p class="project-description">
+                Experimental animations and transitions exploring the boundaries
+                of what's possible on the web.
+              </p>
+              <div class="project-tags">
+                <span class="tag">GSAP</span>
+                <span class="tag">WebGL</span>
+                <span class="tag">Canvas</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
